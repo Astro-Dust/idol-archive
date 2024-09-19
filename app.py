@@ -23,7 +23,7 @@ for name, group in zip(names, groups):
 
 # CLEANING ANNOYING IDOL GROUP'S PARENTHESIS
 
-def remove_parenthesis(idols_storage:dict) -> dict:
+def clean_data(idols_storage:dict) -> dict:
     cleaned_storage = {}
 
     # removing parenthesis and commas
@@ -40,4 +40,4 @@ app = FastAPI()
 
 @app.get('/get-idols')
 def get_idols():
-    return remove_parenthesis(idols_storage)
+    return clean_data(idols_storage)
