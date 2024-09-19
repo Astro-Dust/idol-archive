@@ -18,3 +18,18 @@ for name, group in zip(names, groups):
 
     if idol_name and idol_group:
         idols_storage[idol_name.text] = idol_group.text
+
+
+
+# CLEANING ANNOYING IDOL GROUP'S PARENTHESIS
+
+def remove_parenthesis(idols_storage:dict) -> dict:
+    cleaned_storage = {}
+
+    # removing parenthesis and commas
+    for key, value in idols_storage.items():
+        cleaned_value = value.replace('(', '').replace(')', '').replace(',', '')
+        cleaned_storage[key] = cleaned_value
+
+    return cleaned_storage
+
