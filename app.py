@@ -20,7 +20,6 @@ for name, group in zip(names, groups):
         idols_storage[idol_name.text] = idol_group.text
 
 
-
 # CLEANING ANNOYING IDOL GROUP'S PARENTHESIS
 
 def clean_data(idols_storage:dict) -> dict:
@@ -28,7 +27,7 @@ def clean_data(idols_storage:dict) -> dict:
 
     # removing parenthesis and commas
     for key, value in idols_storage.items():
-        cleaned_value = value.replace('(', '').replace(')', '').replace(',', '').replace('\n', '')
+        cleaned_value = value.replace('(', '').replace(')', '').replace(',', '').replace('\n', '').strip()
         cleaned_storage[key] = cleaned_value
 
     return cleaned_storage
