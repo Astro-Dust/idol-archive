@@ -28,7 +28,7 @@ def clean_data(idols_storage:dict) -> dict:
 
     # removing parenthesis and commas
     for key, value in idols_storage.items():
-        cleaned_value = value.replace('(', '').replace(')', '').replace(',', '')
+        cleaned_value = value.replace('(', '').replace(')', '').replace(',', '').replace('\n', '')
         cleaned_storage[key] = cleaned_value
 
     return cleaned_storage
