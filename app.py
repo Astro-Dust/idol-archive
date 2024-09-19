@@ -33,3 +33,11 @@ def remove_parenthesis(idols_storage:dict) -> dict:
 
     return cleaned_storage
 
+
+# CREATING AN ENDPOINT
+
+app = FastAPI()
+
+@app.get('/get-idols')
+def get_idols():
+    return remove_parenthesis(idols_storage)
